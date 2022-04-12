@@ -51,10 +51,6 @@ public class CommitDialog extends DialogWrapper {
         return reader.readLine();
     }
 
-    public static void main(String[] args) throws IOException {
-        System.out.println(getCurrentGitBranch("C:\\Users\\naisa\\IdeaProjects\\commit-template-with-issue-id").matches("^([^0-9]*)$"));
-    }
-
     @Nullable
     @Override
     protected JComponent createCenterPanel() {
