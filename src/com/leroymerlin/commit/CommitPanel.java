@@ -32,6 +32,8 @@ public class CommitPanel {
     private JRadioButton revertRadioButton;
     private ButtonGroup changeTypeGroup;
 
+    private static final String GIT_LOG_COMMAND = "git log --all --format=%s";
+
     CommitPanel(Project project, CommitMessage commitMessage) {
         File workingDirectory = new File(project.getBasePath());
         GitLogQuery.Result result = new GitLogQuery(workingDirectory).execute();
