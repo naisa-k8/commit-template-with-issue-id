@@ -27,7 +27,7 @@ public class CommitDialog extends DialogWrapper {
         if (!branchName.matches("^([^0-9]*)$")) {
             Matcher match = Pattern.compile("feature/([a-zA-Z]+)(-)([0-9]+)*").matcher(branchName);
             if (match.find())
-                commitMessage.setClosedIssues(match.group().substring(8));
+                commitMessage.setClosedIssues(match.group().substring(8).toUpperCase());
         }
         panel = new CommitPanel(project, commitMessage);
         setTitle("Commit");
