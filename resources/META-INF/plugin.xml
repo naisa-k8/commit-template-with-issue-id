@@ -1,0 +1,41 @@
+<idea-plugin>
+  <id>commit-template-with-issue-id</id>
+  <name>Git Commit Template with Issue Id from Jira</name>
+  <version>1.0</version>
+  <vendor email="naisa@mail-k8-casino.io"/>
+
+  <description><![CDATA[
+        <p>Create a commit message with the following template:</p>
+
+        <pre>
+        &lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+        &lt;BLANK LINE&gt;
+        &lt;body&gt;
+        &lt;BLANK LINE&gt;
+        &lt;footer&gt;
+        </pre>
+    ]]></description>
+
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="Commit.Button" class="com.leroymerlin.commit.CreateCommitAction"
+            text="Create commit message"
+            description="Create commit message"
+            icon="/icons/load.png">
+      <add-to-group group-id="Vcs.MessageActionGroup" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
