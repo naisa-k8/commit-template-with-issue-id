@@ -25,7 +25,7 @@ public class CommitDialog extends DialogWrapper {
         super(project);
         String branchName = getCurrentGitBranch(project.getBasePath());
         if (!branchName.matches("^([^0-9]*)$")) {
-            Matcher match = Pattern.compile("feature/([a-zA-Z]+)(-)([0-9]+)*").matcher("feature/KC-14");
+            Matcher match = Pattern.compile("feature/([a-zA-Z]+)(-)([0-9]+)*").matcher(branchName);
             if (match.find())
                 commitMessage.setClosedIssues(match.group().substring(8));
         }
